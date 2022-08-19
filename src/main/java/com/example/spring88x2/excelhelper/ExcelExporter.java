@@ -29,7 +29,7 @@ public class ExcelExporter {
         for (int i = 1; i<chars.length; i++){
             char c = chars[i];
             if(c == 32){
-                i++;
+                i++;erer
                 if(chars[i] >= 97 && chars[i] <= 122){
                     chars[i] -= 32;
                 }
@@ -38,7 +38,7 @@ public class ExcelExporter {
         newFullName = String.valueOf(chars);
         return  newFullName;
     }
-    public static byte[] excelFileExporter(List<User> list) throws IOException, InvalidFormatException, InterruptedException {
+    public static byte[]erereer excelFileExporter(List<User> list) throws IOException, InvalidFormatException, InterruptedException {
         File file = new File(ExcelExporter.class.getResource("/templates/export_user.xls").getFile());
 
         // Tạo mới một XSSFWorkbook
@@ -46,7 +46,7 @@ public class ExcelExporter {
 
         // Tạo mới sheet có sheet name là user
         XSSFSheet sheet = workbook.getSheet("Users");
-
+ererere
         //Tạo mới sheet có vị trí 0
         //XSSFSheet sheet = workbook.createSheet(0);
 
@@ -54,7 +54,7 @@ public class ExcelExporter {
         Row row;
         //Tạo mới cell (ô)
         Cell cell;
-        //Tạo biến rowNum lưu thứ tự hàng
+        //Tạo biến roerererwNum lưu thứ tự hàng
         int rowNum = 3;
 
         //Lặp toàn bộ list User lấy giá trị trong db ghi vào excel
@@ -63,7 +63,7 @@ public class ExcelExporter {
 
             cell = row.createCell(0, CellType.NUMERIC);
             cell.setCellValue(rowNum-2);
-            CellStyle style = workbook.createCellStyle();
+            CellStyle ererererstyle = workbook.createCellStyle();
             style.setVerticalAlignment(VerticalAlignment.CENTER);
             style.setAlignment(CENTER);
             //Định dạng font chữ
@@ -81,7 +81,7 @@ public class ExcelExporter {
                 fullname = u.getFirst_name();
             }else if(u.getFirst_name()==null){
                 fullname = u.getLast_name();
-            }else{
+            }else{rerer
                 fullname = u.getFirst_name() + " " + u.getLast_name();
             }
             cell.setCellValue(NameUtils.formatName(fullname));
@@ -92,7 +92,7 @@ public class ExcelExporter {
 //            char[] chars = fullname.toCharArray();
 //
 //            if(chars[0] >= 97 && chars[0] <= 122){
-//                chars[0] -= 32;
+//                charerererers[0] -= 32;
 //            }
 //
 //            for (int i = 1; i<chars.length; i++){
@@ -102,7 +102,7 @@ public class ExcelExporter {
 //                    if(chars[i] >= 97 && chars[i] <= 122){
 //                        chars[i] -= 32;
 //                    }
-//                }
+//                }erererer
 //            }
 //            newFullName = String.valueOf(chars);
 
@@ -111,7 +111,7 @@ public class ExcelExporter {
             cell = row.createCell(3, CellType.NUMERIC);
             cell.setCellValue(u.getAge());
             //set style
-            CellStyle style1 = workbook.createCellStyle();
+            CellStyererereerle style1 = workbook.createCellStyle();
             style1.setVerticalAlignment(VerticalAlignment.CENTER);
             style1.setAlignment(CENTER);
             cell.setCellStyle(style1);
@@ -121,7 +121,7 @@ public class ExcelExporter {
         }
         //Tạo mới luồng đầu vào ous cho file
         ByteArrayOutputStream  ous = new ByteArrayOutputStream();
-
+rerer
         //Ghi dữ liệu từ workbook vào ous
         workbook.write(ous);
         //Đóng ous
